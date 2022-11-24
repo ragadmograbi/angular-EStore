@@ -1,0 +1,24 @@
+
+<div>
+<br>
+
+</div>
+
+<div class="card text-dark bg-light mb-3" style="width: 18rem; background-color: rgba(235, 255, 255, 0.658)" >
+<br>
+  <div class="card">
+    <div class="col-md-2">
+      <img src="../../../assets/store-items/{{data.image_name}}" class="card-img-top" alt="card image" >
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">product name = {{data.Name}}</h5>
+      <h5>
+       product price = {{data.Price}}
+      </h5>
+      <button class="btn btn-primary">Click</button>
+      <button class="btn btn-dark mb-2" (click)="addItemToCart()">add to cart
+      </button>
+    </div>
+  </div>
+
+</div>
