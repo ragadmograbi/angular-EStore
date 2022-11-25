@@ -10,5 +10,6 @@ export interface product {
 export interface cartproduct {
   Name: string,
   Price: number,
-  image_name: string
+  image_name: string,
+  quantity: number
 }

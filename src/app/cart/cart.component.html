@@ -4,23 +4,28 @@
       Shopping Bag
     </header>
     
+</div>
 
+  <div class="row" >
+    <div class="col-75">
 
-  <div class="row w-100" >
-    <div class="col-1"></div>
-    <div class="col-10">
-      <div class="container">
-       
-          <app-cart-item  [itemdata]="item" class="col-lg-4 d-flex align-items-stretch" 
-          *ngFor="let item of items"  ></app-cart-item>
-
-          
-     
-      </div>
+      <div >
+        <br>
+        </div>
+        <div >
+          <div class="container">
+              <app-cart-item  [itemdata]="item"
+              *ngFor="let item of items"  ></app-cart-item>
+          </div>
+        </div>
+        <div >
+        <br>
+        </div>
     </div>
-    <div class="col-1"></div>
+   
   </div>
 
+  <button class="btn btn-dark mb-2">checkout
+  </button>
 
-</div>
   

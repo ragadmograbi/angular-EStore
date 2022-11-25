@@ -1,25 +1,34 @@
 <p>cart-item </p>
 <div>
-    <br>
+<br>
+</div>
+
+
+<div class="card mb-3" style="max-width: 500px;">
+    <div class="row g-0">
+
+        <div class="col-md-4">
+        <img src="../../../assets/store-items/{{itemdata.image_name}}" class="img-fluid rounded-start" alt="...">
+        <button class="btnRemove btn-dark mb-2" (click)="buy()">remove
+        </button>
     
-    </div>
-    
-    <div class="card text-dark bg-light mb-3" style="width: 18rem; background-color: rgba(235, 255, 255, 0.658)" >
-    <br>
-      <div class="card">
-        <div class="col-md-2">
-          <img src="../../../assets/store-items/{{itemdata.image_name}}" class="card-img-top" alt="card image" >
+        
         </div>
+        <div class="col-md-4">
         <div class="card-body">
-          <h5 class="card-title">product name = {{itemdata.Name}}</h5>
-          <h5>
-           product price = {{itemdata.Price}}
-          </h5>
-          
-          <button class="btn btn-dark mb-2" (click)="buy()">remove
-          </button>
+            <h5 class="card-title">{{itemdata.Name}}</h5>
+            <h5>price = {{itemdata.Price}}$</h5>
+        
+            <button class="btn5 btn-dark mb-2" (click)="changeQuantity(+1)">↑
+            </button>
+            <input type="text" class="form-control text-center" readonly value="{{this.itemdata.quantity}}" width="10px">
+            <button class="btn5 btn-dark mb-2" (click)="changeQuantity(-1)">↓
+            </button>
         </div>
-      </div>
+        </div>
+
     
     </div>
+</div>
+
     

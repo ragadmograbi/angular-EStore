@@ -1,4 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+
+
+
+
+/**
+ * 
+ * USER
+ *    username 
+ *    email 
+ *    password
+ *    ...
+ *    cart: []
+ */
+
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +23,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  async navigate(domain: number) {
+    switch(domain){
+      case 2: await this.router.navigateByUrl('/cart'); break;
+    }
+      
+  }
 }

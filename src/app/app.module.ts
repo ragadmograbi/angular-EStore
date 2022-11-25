@@ -11,6 +11,16 @@ import { CartComponent } from './cart/cart.component';
 import { StoreItemComponent } from './store/store-item/store-item.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CartItemComponent } from './cart/cart-item/cart-item.component';
+import { RouterModule, Routes } from '@angular/router';
+
+
+const routes: Routes = [
+  { path: 'store', component: StoreComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'signIn', component: SignInComponent },
+  { path: 'signUP', component: SignUpComponent },
+
+];
 
 @NgModule({
   declarations: [
@@ -26,7 +36,8 @@ import { CartItemComponent } from './cart/cart-item/cart-item.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

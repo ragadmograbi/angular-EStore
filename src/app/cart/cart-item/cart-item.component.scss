@@ -2,6 +2,9 @@
 img {
     width:200px;
     height:200px;
+    
+    background-attachment: fixed;
+    background-color: white;
 }
 h5   {
     color: rgb(0, 175, 70);
@@ -11,7 +14,7 @@ p    {
 }
 
 button {
-    background-color: #4CAF50; /* Green */
+    background-color: #c92b2b; /* Green */
     border: none;
     color: white;
     padding: 14px 20px;
@@ -26,4 +29,20 @@ button {
 button:hover {
     background-color: #d4fad6; /* Green */
     color: white;
+  }
+
+.btn5 {
+    background-color: #3cdd9f; /* Green */
+    border-radius: 50%;
+}
+
+
+.btnRemove{
+    background-color: #ff172b; /* Green */ 
+    border-radius: 20%;
+}
+
+
+input {
+    width: 40%;
   }

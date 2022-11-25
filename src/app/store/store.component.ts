@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { product } from '../prod.interface';
 
 @Component({
@@ -19,6 +20,7 @@ export class StoreComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     await this.loadData();
+   
   }
 
   async loadData() {
@@ -40,7 +42,4 @@ export class StoreComponent implements OnInit {
 
     this.cnt = this.products.length;
   }
-
-  
-
 }

@@ -20,5 +20,15 @@ export class CartItemComponent implements OnInit {
     
   }
 
+  async changeQuantity(number: number) {
+
+    if(this.itemdata.quantity < 2 && number < 0) {
+      return;
+    }
+   
+    this.itemdata.quantity += number;
+  }
+
+
 
 }
