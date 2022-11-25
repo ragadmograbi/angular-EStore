@@ -17,7 +17,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: 'store', component: StoreComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'signIn', component: SignInComponent },
+  { path: '', component: SignInComponent },
   { path: 'signUP', component: SignUpComponent },
 
 ];
