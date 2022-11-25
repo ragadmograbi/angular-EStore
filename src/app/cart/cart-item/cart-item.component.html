@@ -1,1 +1,25 @@
-<p>cart-item works!</p>
+<p>cart-item </p>
+<div>
+    <br>
+    
+    </div>
+    
+    <div class="card text-dark bg-light mb-3" style="width: 18rem; background-color: rgba(235, 255, 255, 0.658)" >
+    <br>
+      <div class="card">
+        <div class="col-md-2">
+          <img src="../../../assets/store-items/{{itemdata.image_name}}" class="card-img-top" alt="card image" >
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">product name = {{itemdata.Name}}</h5>
+          <h5>
+           product price = {{itemdata.Price}}
+          </h5>
+          
+          <button class="btn btn-dark mb-2" (click)="buy()">remove
+          </button>
+        </div>
+      </div>
+    
+    </div>
+    

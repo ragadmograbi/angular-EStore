@@ -4,5 +4,23 @@
       Shopping Bag
     </header>
     
+
+
+  <div class="row w-100" >
+    <div class="col-1"></div>
+    <div class="col-10">
+      <div class="container">
+       
+          <app-cart-item  [itemdata]="item" class="col-lg-4 d-flex align-items-stretch" 
+          *ngFor="let item of items"  ></app-cart-item>
+
+          
+     
+      </div>
+    </div>
+    <div class="col-1"></div>
+  </div>
+
+
 </div>
   

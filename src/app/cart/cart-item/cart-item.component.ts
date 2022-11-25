@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { cartproduct } from 'src/app/prod.interface';
+
 
 @Component({
   selector: 'app-cart-item',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartItemComponent implements OnInit {
 
+  @Input() itemdata!: cartproduct;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  async buy() {
+    
+  }
+
 
 }
