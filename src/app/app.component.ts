@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
-
+import {ToastContainerDirective, ToastrService} from 'ngx-toastr';
 
 /*
 
@@ -14,12 +14,14 @@ import { NavigationEnd, NavigationStart, Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  @ViewChild(ToastContainerDirective, {static: true})
+  toastContainer!: ToastContainerDirective;
   title = 'Ragad\'s EStore';
-  constructor(private router: Router) {
+  constructor(private router: Router, private toastr: ToastrService) {
 
   }
   ngOnInit(): void {
-
+      this.toastr.overlayContainer = this.toastContainer;
     
     this.router.events.subscribe(async (state) => {
       this.showNav();

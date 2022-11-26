@@ -1,15 +1,22 @@
 
-<div class="row w-100" *ngIf="showStore">
-    <div class="col-1"></div>
-    <div class="col-10">
-      <div class="container">
-        <div class="row row-cols-auto gx-4 justify-content-center">
-          <app-store-item [data]="product" class="col-lg-4 d-flex align-items-stretch" 
-          *ngFor="let product of products" ></app-store-item>
-
+ 
+<div>
+  <br>
+</div>
+    <div class="row w-100" *ngIf="showStore">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <div class="container">
+            <div class="row row-cols-auto gx-4 justify-content-center">
+              <app-store-item [data]="product" class="col-lg-4 d-flex align-items-stretch" 
+              *ngFor="let product of products" ></app-store-item>
+    
+            </div>
+          </div>
         </div>
+        <div class="col-1"></div>
       </div>
-    </div>
-    <div class="col-1"></div>
-  </div>
 
+      <div>
+        <br>
+      </div>

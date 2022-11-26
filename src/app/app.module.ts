@@ -12,8 +12,9 @@ import { StoreItemComponent } from './store/store-item/store-item.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CartItemComponent } from './cart/cart-item/cart-item.component';
 import { RouterModule, Routes } from '@angular/router';
-
-
+import { FormsModule } from '@angular/forms';
+import {ToastContainerModule, ToastrModule} from "ngx-toastr";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
 const routes: Routes = [
   { path: 'store', component: StoreComponent },
   { path: 'cart', component: CartComponent },
@@ -37,6 +38,13 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ToastrModule.forRoot({
+      preventDuplicates: true,
+      autoDismiss: true,
+      positionClass: 'toast-top-center'
+    }),
+    ToastContainerModule, ToastrModule, BrowserAnimationsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
