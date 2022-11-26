@@ -24,13 +24,16 @@ export class StoreItemComponent implements OnInit {
 
 
   async addItemToCart() {
+    
+    this.toastrSer.info('adding item to cart');
+
     this.userSer.addToCart({
       image_name: this.data.image_name,
       Name: this.data.Name,
       Price: this.data.Price,
-      quantity: 1
+      quantity: 1,
     });
-    this.toastrSer.success('asdfasdf')
+    this.toastrSer.success('add item to cart');
   }
 
 }

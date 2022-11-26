@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { cartproduct } from './prod.interface';
+import { ToastrService } from 'ngx-toastr';
 
 
 export interface User {
@@ -15,7 +16,7 @@ export interface User {
 export class UserService {
   public user!: User;
   
-  constructor() { }
+  constructor(private toastrSer: ToastrService) { }
 
 
   public loadData(email: string) {
@@ -36,28 +37,18 @@ export class UserService {
   }
 
   public addToCart(item: cartproduct) {
-    this.user.cart.push(item);
     for (let i = 0; i < this.user.cart.length; i++) {
       if (this.user.cart[i].Name === item.Name) {
-        this.user.cart[i] = item;
+        this.user.cart[i].quantity++;
+        localStorage.setItem(this.user.email, JSON.stringify(this.user));
+        return;
       }
     }
+    this.user.cart.push(item);
     // localStorage.removeItem(this.user.email);
     localStorage.setItem(this.user.email, JSON.stringify(this.user));
   }
 
-  public saveSignUp(email: string, pass: string) {
-
-  }
-
-  public checkSignUp(email: string, pass: string) {
-    
-    
-
-    return 0
-    
-  }
-  
 
   getCart() {
     return this.user.cart;

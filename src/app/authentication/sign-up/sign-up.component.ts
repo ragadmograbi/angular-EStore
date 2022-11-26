@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/user.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
+import { User, UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -13,28 +14,16 @@ export class SignUpComponent implements OnInit {
   public _repassword: string = '';
  
 
-  constructor( private toastrSer: ToastrService) { }
+  constructor( private router: Router,private user: UserService, private toastrSer: ToastrService) { }
 
   ngOnInit(): void {
   }
   public signup() {
-      console.log(this._email, this._password)
-      // validate inputs
-      const checkAccount = localStorage.getItem(this._email);
-      if (checkAccount) {
-        this.toastrSer.error('you already have an account sign in')
+
+     
+      if(this.isNotValid()){
         return;
       }
-
-      if(!this.strongPass()){
-        return
-      }
-
-      if(this._password !== this._repassword){
-        this.toastrSer.error('incorrect password: repassword doesn\' match your password')
-        return;
-      }
-
       const account: User = {
         password: this._password,
         username: this._email.split('@')[0],
@@ -42,6 +31,14 @@ export class SignUpComponent implements OnInit {
         cart: []
       };
       localStorage.setItem(this._email, JSON.stringify(account));
+
+      this.user.loadData(account.email);
+      this.toastrSer.success('logged in success')
+      this.router.navigateByUrl('/store');
+      
+
+      
+
   }
 
   public strongPass(){
@@ -58,4 +55,50 @@ export class SignUpComponent implements OnInit {
 
     return true;
   }
+
+
+  public ValidateEmail()
+  {
+
+    const mail: string = this._email;
+
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(mail.match(mailformat))
+    {
+      alert("Valid email address!");
+      return true;
+    }
+    else
+    {
+      alert("You have entered an invalid email address!");
+      return false;
+    }
+  }
+
+  public isNotValid(){
+    console.log(this._email, this._password)
+    // validate inputs
+
+    if(!this.ValidateEmail()){
+      return true;
+    }
+
+    const checkAccount = localStorage.getItem(this._email);
+    if (checkAccount) {
+      this.toastrSer.error('you already have an account sign in')
+      return true;
+    }
+
+    if(!this.strongPass()){
+      return true;
+    }
+
+    if(this._password !== this._repassword){
+      this.toastrSer.error('incorrect password: repassword doesn\' match your password')
+      return true;
+    }
+
+    return false;
+  }
+
 }
