@@ -26,29 +26,29 @@ export class StoreComponent implements OnInit {
   async loadData() {
     
     this.products = [{
-      Name: "cowboy hat",
+      Name: "item1",
       Price: 10,
       image_name: "1.webp"},
-      {Name: "hoodies",
+      {Name: "item2",
         Price: 20,
         image_name: "2.webp"},
-      {Name: "sun hat",
+      {Name: "item3",
       Price: 30,
       image_name: "3.webp"},
-      {Name: "sweater",
+      {Name: "item4",
         Price: 40,
         image_name: "4.webp"},
         {
-          Name: "cowboy hat",
+          Name: "item5",
           Price: 10,
           image_name: "5.webp"},
-          {Name: "hoodies",
+          {Name: "item6",
             Price: 20,
             image_name: "6.webp"},
-          {Name: "sun hat",
+          {Name: "item7",
           Price: 30,
           image_name: "7.webp"},
-          {Name: "sweater",
+          {Name: "item8",
             Price: 40,
             image_name: "8.webp"}
           

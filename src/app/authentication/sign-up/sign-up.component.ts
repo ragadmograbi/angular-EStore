@@ -33,7 +33,7 @@ export class SignUpComponent implements OnInit {
       localStorage.setItem(this._email, JSON.stringify(account));
 
       this.user.loadData(account.email);
-      this.toastrSer.success('logged in success')
+      this.toastrSer.success('logged in success');
       this.router.navigateByUrl('/store');
       
 

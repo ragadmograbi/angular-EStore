@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User, UserService } from 'src/app/user.service';
 
 /**
  * 
@@ -19,11 +20,14 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router: Router) { }
+
+  public usrname: string = this.user.user.username;
+
+  constructor(private router: Router, private user: UserService) { }
 
   ngOnInit(): void {
      
-  
+    this.usrname = this.user.user.username;
   }
 
   async navigate(domain: number) {

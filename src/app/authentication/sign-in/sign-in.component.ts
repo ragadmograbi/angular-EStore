@@ -29,7 +29,7 @@ export class SignInComponent implements OnInit {
         
       }
       this.user.loadData(data.email);
-      this.toastrSer.success('logged in success')
+      this.toastrSer.success('logged in success');
       await this.router.navigateByUrl('/store');
       
   }

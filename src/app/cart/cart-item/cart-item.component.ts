@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { cartproduct } from 'src/app/prod.interface';
+import { User, UserService } from 'src/app/user.service';
 
 
 @Component({
@@ -11,12 +12,13 @@ export class CartItemComponent implements OnInit {
 
   @Input() itemdata!: cartproduct;
 
-  constructor() { }
+  constructor(private user: UserService) { }
 
   ngOnInit(): void {
   }
 
-  async buy() {
+  async remove() {
+    this.user.removeItem(this.itemdata.Name);
     
   }
 
@@ -27,6 +29,7 @@ export class CartItemComponent implements OnInit {
     }
    
     this.itemdata.quantity += number;
+    this.user.changeQuantit(number);
   }
 
 

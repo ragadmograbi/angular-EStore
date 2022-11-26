@@ -36,6 +36,7 @@ export class UserService {
     localStorage.setItem(this.user.email, JSON.stringify(this.user));
   }
 
+
   public addToCart(item: cartproduct) {
     for (let i = 0; i < this.user.cart.length; i++) {
       if (this.user.cart[i].Name === item.Name) {
