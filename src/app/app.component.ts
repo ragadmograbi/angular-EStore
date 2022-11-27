@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import {ToastContainerDirective, ToastrService} from 'ngx-toastr';
+import { User, UserService } from 'src/app/user.service';
 
 /*
 
@@ -17,7 +18,8 @@ export class AppComponent implements OnInit {
   @ViewChild(ToastContainerDirective, {static: true})
   toastContainer!: ToastContainerDirective;
   title = 'Ragad\'s EStore';
-  constructor(private router: Router, private toastr: ToastrService) {
+  loginFlag : boolean = false;
+  constructor(private router: Router, private toastr: ToastrService,  private user: UserService) {
 
   }
   ngOnInit(): void {
@@ -26,16 +28,18 @@ export class AppComponent implements OnInit {
     this.router.events.subscribe(async (state) => {
       this.showNav();
 
-      console.log(this.router.url);
-      if (this.router.url !== '/') {
+      // console.log(this.router.url);
+      if (this.router.url !== '/' && this.router.url !== '/signUP') {
         if (state instanceof NavigationEnd) {
-          const loggedin = localStorage.getItem('isUserLogedIn');
-          /*
-            if (loggedin !== 'True') {
-              await this.router.navigateByUrl('/cart')
+          //const user = getItem(this.user.user);
+          // const userData  = sessionStorage.getItem(this.user.user.email);
+
+          if(!this.user.userLoggedIn){
+            this.toastr.warning('login = false');
+            await this.router.navigateByUrl('')
+            return;
           }
-          */
-          
+
           
         }
       }
@@ -47,6 +51,7 @@ export class AppComponent implements OnInit {
     if (this.router.url === '/' || this.router.url === '/signUP'  ) {
       return false;
     }
+
     return true;
 
   }

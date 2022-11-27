@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { cartproduct } from 'src/app/prod.interface';
 import { User, UserService } from 'src/app/user.service';
 
@@ -12,6 +12,8 @@ export class CartItemComponent implements OnInit {
 
   @Input() itemdata!: cartproduct;
 
+  @Output() removedItem = new EventEmitter<void>();
+
   constructor(private user: UserService) { }
 
   ngOnInit(): void {
@@ -19,7 +21,7 @@ export class CartItemComponent implements OnInit {
 
   async remove() {
     this.user.removeItem(this.itemdata.Name);
-    
+    this.removedItem.emit();
   }
 
   async changeQuantity(number: number) {

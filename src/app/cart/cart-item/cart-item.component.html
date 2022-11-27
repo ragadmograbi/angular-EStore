@@ -1,34 +1,37 @@
-<p>cart-item </p>
 <div>
 <br>
 </div>
 
 
-<div class="card mb-3" style="max-width: 500px;">
+<div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
-
-        <div class="col-md-4">
+      <div class="col-md-4">
         <img src="../../../assets/bellaImgs/{{itemdata.image_name}}" class="img-fluid rounded-start" alt="...">
-        <button class="btnRemove btn-dark mb-2" (click)="remove()">remove
-        </button>
-    
-        
-        </div>
-        <div class="col-md-4">
+      </div>
+      <div class="col-md-8">
         <div class="card-body">
-            <h5 class="card-title">{{itemdata.Name}}</h5>
-            <h5>price = {{itemdata.Price}}$</h5>
-        
-            <button class="btn5 btn-dark mb-2" (click)="changeQuantity(+1)">↑
-            </button>
-            <input type="text" class="form-control text-center" readonly value="{{this.itemdata.quantity}}" width="10px">
-            <button class="btn5 btn-dark mb-2" (click)="changeQuantity(-1)">↓
-            </button>
+          <h5 class="card-title">{{itemdata.Name}}</h5>
+          <p class="card-text">price = {{itemdata.Price}}$</p>
+       
+      <!-- Change the `data-field` of buttons and `name` of input field's for multiple plus minus buttons-->
+        <div class="input-group plus-minus-input">
+            <div class="input-group-button">
+                <div>
+                    <button class="btn5 btn-dark mb-2" (click)="changeQuantity(+1)">+</button>
+                    <input type="number" class="count" name="qty" readonly value="{{this.itemdata.quantity}}">
+                    <button class="btn5 btn-dark mb-2" (click)="changeQuantity(-1)">-</button>
+                </div>
+            </div>
         </div>
+  
+        <div>
+            <button class="btnRemove btn-dark mb-2" (click)="remove()">remove</button>
+
         </div>
 
-    
+
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 
-    

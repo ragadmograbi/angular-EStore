@@ -14,7 +14,7 @@
         </div>
         <div >
           <div class="container">
-              <app-cart-item  [itemdata]="item"
+              <app-cart-item  [itemdata]="item" (removedItem)="this.update()"
               *ngFor="let item of items"  ></app-cart-item>
           </div>
         </div>

@@ -1,48 +1,32 @@
 
-img {
-    width:150px;
-    height:200px;
-    border-radius: 40%;
-    background-attachment: fixed;
-    background-color: white;
-}
-h5   {
-    color: rgb(0, 175, 70);
-}
-p    {
-    color: red;
-}
-
-button {
-    background-color: #c92b2b; /* Green */
-    border: none;
-    color: white;
-    padding: 14px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
-    transition-duration: 0.2s;
-    cursor: pointer;
-  }
-button:hover {
-    background-color: #d4fad6; /* Green */
-    color: white;
-  }
-
 .btn5 {
-    background-color: #3cdd9f; /* Green */
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    color: rgb(0, 0, 0);
+    background-color: bisque;
+    border-color: bisque;
+    width: 30px;
+    height: 30px;
+    font: 30px/1 Arial,sans-serif;
+    text-align: center;
     border-radius: 50%;
 }
 
 
 .btnRemove{
-    background-color: #ff172b; /* Green */ 
-    border-radius: 20%;
+    background-color: #8a4e53; /* Green */ 
+    border-radius: 10%;
+    border: #8a4e53;
 }
 
 
 input {
-    width: 40%;
-  }
+    width: 15%;
+}
+
+
+button:hover {
+    background-color: #c7c7c7; /* Green */
+    color: white;
+}

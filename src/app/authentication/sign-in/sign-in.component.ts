@@ -28,6 +28,7 @@ export class SignInComponent implements OnInit {
         return;
         
       }
+      sessionStorage.setItem('loggedInUser', this._email);
       this.user.loadData(data.email);
       this.toastrSer.success('logged in success');
       await this.router.navigateByUrl('/store');

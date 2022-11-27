@@ -38,6 +38,11 @@ export class NavbarComponent implements OnInit {
       
   }
 
+  public logOut(){
+    this.user.user.login = false;
+  }
+
+
 
   
 }

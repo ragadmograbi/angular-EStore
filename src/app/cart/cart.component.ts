@@ -18,11 +18,14 @@ export class CartComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     await this.loadData();
-
   }
   
   async loadData() {
         this.items = this.user.user.cart;
+  }
+
+  public update() {
+    this.items = this.user.user.cart;
   }
 
 }

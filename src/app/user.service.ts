@@ -7,7 +7,8 @@ export interface User {
   username: string,
   password: string,
   email: string,
-  cart: Array<cartproduct>
+  cart: Array<cartproduct>,
+  login : boolean
 }
 
 @Injectable({
@@ -15,16 +16,28 @@ export interface User {
 })
 export class UserService {
   public user!: User;
+  public userLoggedIn: boolean = false;
   
-  constructor(private toastrSer: ToastrService) { }
+  constructor(private toastrSer: ToastrService) { 
+      const loggedInUser = sessionStorage.getItem('loggedInUser');
+      console.log(loggedInUser)
+      if(loggedInUser) {
+          this.userLoggedIn = true;
+          this.loadData(loggedInUser)
+      }
+
+  }
 
 
   public loadData(email: string) {
-    const userData  = localStorage.getItem(email);
+    console.log('in laod data');
+    
+     const userData  = localStorage.getItem(email);
     if (!userData) {return;}
-    this.user = JSON.parse(
-      userData
-    );
+    
+    this.user = JSON.parse(userData);
+    this.user.login = true;
+
   }
 
   public changeQuantit(number: number) {
@@ -46,7 +59,6 @@ export class UserService {
       }
     }
     this.user.cart.push(item);
-    // localStorage.removeItem(this.user.email);
     localStorage.setItem(this.user.email, JSON.stringify(this.user));
   }
 
