@@ -9,7 +9,7 @@
           <div class="container">
             <div class="row row-cols-auto gx-4 justify-content-center">
               <app-store-item [data]="product" class="col-lg-4 d-flex align-items-stretch" 
-              *ngFor="let product of products" ></app-store-item>
+              *ngFor="let product of products" [id]="product.Name" ></app-store-item>
     
             </div>
           </div>

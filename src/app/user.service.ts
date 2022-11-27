@@ -31,7 +31,7 @@ export class UserService {
 
   public loadData(email: string) {
     console.log('in laod data');
-    
+    this.userLoggedIn = true;
      const userData  = localStorage.getItem(email);
     if (!userData) {return;}
     

@@ -31,18 +31,17 @@ export class AppComponent implements OnInit {
       // console.log(this.router.url);
       if (this.router.url !== '/' && this.router.url !== '/signUP') {
         if (state instanceof NavigationEnd) {
-          //const user = getItem(this.user.user);
-          // const userData  = sessionStorage.getItem(this.user.user.email);
-
           if(!this.user.userLoggedIn){
             this.toastr.warning('login = false');
             await this.router.navigateByUrl('')
             return;
           }
-
-          
         }
       }
+
+      // if (this.router.url === '/' && this.user.userLoggedIn) {
+      //   await this.router.navigateByUrl('/store')
+      // }
 
     })
   }
