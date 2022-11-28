@@ -5,6 +5,7 @@ const config: PlaywrightTestConfig = {
   testDir: './E2Etests',
   timeout: 5 * 60 * 1000,
   globalTimeout: 10 * 60 * 1000,
+  workers: 2,
   expect: {
     timeout: 1 * 60 * 1000
   },
