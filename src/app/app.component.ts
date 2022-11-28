@@ -28,11 +28,9 @@ export class AppComponent implements OnInit {
     this.router.events.subscribe(async (state) => {
       this.showNav();
 
-      // console.log(this.router.url);
       if (this.router.url !== '/' && this.router.url !== '/signUP') {
         if (state instanceof NavigationEnd) {
           if(!this.user.userLoggedIn){
-            this.toastr.warning('login = false');
             await this.router.navigateByUrl('')
             return;
           }

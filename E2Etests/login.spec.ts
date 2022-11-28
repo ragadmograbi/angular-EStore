@@ -1,22 +1,8 @@
 import { test, expect } from '@playwright/test';
+import { login } from './common/login';
 
 test('Login - with already existing account', async ({ page }) => {
-    const account = {
-        password: 'Abcdefg',
-        username: 'Abcdefghi',
-        email: 'Abcdefghi@gmail.com',
-        login: true,
-        cart: []
-      };
-
-    const ss = JSON.stringify(account);
-
-    await page.addInitScript(`window.localStorage.setItem('Abcdefghi@gmail.com', '${ss}')`);
-
-    await page.goto('', {waitUntil: 'domcontentloaded'});
-    await page.locator('#loginEmail').fill('Abcdefghi@gmail.com');
-    await page.locator('#loginPassword').fill('Abcdefg');
-    await page.locator('#loginButton').click();
+    await login(page);
     const navbar = page.locator('#app-navbar');
     await expect(navbar).toBeVisible();
     const username = page.locator('#navbar_username');

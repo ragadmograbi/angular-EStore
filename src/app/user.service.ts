@@ -20,7 +20,6 @@ export class UserService {
   
   constructor(private toastrSer: ToastrService) { 
       const loggedInUser = sessionStorage.getItem('loggedInUser');
-      console.log(loggedInUser)
       if(loggedInUser) {
           this.userLoggedIn = true;
           this.loadData(loggedInUser)
@@ -30,7 +29,6 @@ export class UserService {
 
 
   public loadData(email: string) {
-    console.log('in laod data');
     this.userLoggedIn = true;
      const userData  = localStorage.getItem(email);
     if (!userData) {return;}

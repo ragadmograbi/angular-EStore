@@ -1,22 +1,9 @@
 import { test, expect } from '@playwright/test';
+import { login } from './common/login';
 
-test('Login - with already existing account', async ({ page }) => {
-    const account = {
-        password: 'Abcdefg',
-        username: 'Abcdefghi',
-        email: 'Abcdefghi@gmail.com',
-        login: true,
-        cart: []
-    };
-
-    const ss = JSON.stringify(account);
-
-    await page.addInitScript(`window.localStorage.setItem('Abcdefghi@gmail.com', '${ss}')`);
-
-    await page.goto('', { waitUntil: 'domcontentloaded' });
-    await page.locator('#loginEmail').fill('Abcdefghi@gmail.com');
-    await page.locator('#loginPassword').fill('Abcdefg');
-    await page.locator('#loginButton').click();
+test('Login - Add to Cart & view Cart list', async ({ page }) => {
+   
+    await login(page);
 
     const store_item1 = page.locator('#item1 >> text=" add to cart "');
     const store_item2 = page.locator('#item3 >> text=" add to cart "');

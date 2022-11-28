@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Times New Roman', serif;
   }
   
   .topnav {
@@ -32,3 +32,9 @@ button:hover {
     background-color: #c7c7c7; /* Green */
     color: white;
   }
+
+.d-flex{
+  font-family: 'Times New Roman', serif;
+  font-size: 23px;
+  color: #808080;
+}

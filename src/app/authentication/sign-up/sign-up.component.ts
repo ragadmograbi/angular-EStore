@@ -96,21 +96,16 @@ export class SignUpComponent implements OnInit {
   }
 
   public msgcheckEmail() {
+    const checkAccount = localStorage.getItem(this._email);
     if(!this.ValidateEmail()) {
         document.getElementById('emailError')!.innerText = "* You have entered an invalid email address!";
     }
-    
-    const checkAccount = localStorage.getItem(this._email);
-    if (checkAccount) {
+    else if (checkAccount) {
       document.getElementById('emailError')!.innerText = "* you already have an account sign in";
-      return ;
-    }
-    if(!checkAccount && this.ValidateEmail()) {
-      document.getElementById('emailError')!.innerText = "";
-    }
 
+    }
     else{
-      document.getElementById('emailError')!.innerText = "You have entered an invalid email address!";
+      document.getElementById('emailError')!.innerText = "";
     }
   }
 
@@ -120,17 +115,14 @@ export class SignUpComponent implements OnInit {
       document.getElementById('StrongPassError')!.innerText = "* Password length should be at least 6 letters";      
     }
 
-    if(!this._password.match(upperCaseLetters)){
+    else if(!this._password.match(upperCaseLetters)){
       document.getElementById('StrongPassError')!.innerText = "* Password should contain at least 1 Capital Letter";      
       
     }
 
-    if(this._password.length >= 6 && this._password.match(upperCaseLetters)){
-      document.getElementById('StrongPassError')!.innerText = "";
-    }
-
     else {
-      document.getElementById('StrongPassError')!.innerText = "invalid password";
+      document.getElementById('StrongPassError')!.innerText = "";
+      
     }
 
   }

@@ -41,6 +41,9 @@ const config: PlaywrightTestConfig = {
     trace: 'on-first-retry',
     baseURL: 'http://localhost:4200/',
     headless: false,
+    launchOptions: {
+      args: ['--disable-web-security']
+    }
 
   },
   webServer: {

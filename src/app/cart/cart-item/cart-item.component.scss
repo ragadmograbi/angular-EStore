@@ -3,25 +3,33 @@
     cursor: pointer;
     display: inline-block;
     vertical-align: top;
-    color: rgb(0, 0, 0);
-    background-color: bisque;
-    border-color: bisque;
+    color: rgb(255, 255, 255);
+    background-color: rgb(122, 216, 172);
+    border: none;
     width: 30px;
     height: 30px;
-    font: 30px/1 Arial,sans-serif;
+    font: 30px/1 Times New Roman,sans-serif;
     text-align: center;
-    border-radius: 50%;
+    border-radius: 10%;
 }
 
 
 .btnRemove{
-    background-color: #8a4e53; /* Green */ 
+    font-family: 'Times New Roman', serif;
+    font-size: 25px;
+    color: white;
+    background-color: #ff0000; /* Green */ 
     border-radius: 10%;
-    border: #8a4e53;
+    border: none;
 }
 
 
 input {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+
+    border: none;
     width: 15%;
 }
 
@@ -29,4 +37,12 @@ input {
 button:hover {
     background-color: #c7c7c7; /* Green */
     color: white;
+    border: none;
+
+}
+
+
+.card{
+    font-family: 'Times New Roman', serif;
+
 }

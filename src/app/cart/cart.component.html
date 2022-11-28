@@ -1,13 +1,7 @@
 
-<div class="subtitle">
-    <header id="myheader" >
-      Shopping Bag
-    </header>
-    
-</div>
 
   <div class="row" >
-    <div class="col-75">
+    <div class="col-200">
 
       <div >
         <br>
@@ -16,16 +10,18 @@
           <div class="container">
               <app-cart-item  [itemdata]="item" (removedItem)="this.update()"
               *ngFor="let item of items" [id]="item.Name" ></app-cart-item>
+              <button class="btn btn-dark mb-2">checkout</button>
           </div>
         </div>
         <div >
         <br>
         </div>
+
+        
+
     </div>
    
   </div>
 
-  <button class="btn btn-dark mb-2">checkout
-  </button>
 
   
